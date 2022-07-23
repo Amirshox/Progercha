@@ -3,13 +3,13 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"progercha/controllers"
-	"progercha/models"
+	"progercha/db"
 )
 
 func main() {
 	r := gin.Default()
 
-	models.ConnectDatabase()
+	db.ConnectDatabase()
 
 	r.GET("/books", controllers.FindBooks)
 	r.POST("/books", controllers.CreateBook)
